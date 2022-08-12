@@ -1,0 +1,120 @@
+//PARKING PROJECT BY SUNNY
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+int nob=0,noc=0,nor=0,nobi=0,count=0,amount=0,BA=0,CA=0,RA=0,BIA=0;
+void bus()
+{
+    printf("\nBUS entered with Chagre 100\a");
+    nob++;
+    amount+=100;
+    BA+=100;
+    count+=1;
+    system("clear");
+}
+void cycle()
+{
+    printf("\nCYCLE entered with Charge 10\a");
+    noc++;
+    amount+=10;
+    CA+=10;
+    count+=1;
+    system("clear");
+}
+void Rikshaw()
+{
+    printf("\nRIKSHAW entered with charge 50\a");
+    nor++;
+    RA+=50;
+    amount+=50;
+    count+=1;
+    system("clear");
+}
+void bike()
+{
+    printf("\nBIKE entered with charge 25\a");
+    nobi++;
+    BIA+=25;
+    amount+=25;
+    count+=1;
+    system("clear");
+}
+void status()
+{
+    printf("\a\n\nnumber of BUS entered = %d    and total charged = %d\n",nob,BA);
+    printf("number of CYCLE  entered = %d    and total charged = %d\n",noc,CA);
+    printf("number of RIKSHAW entered = %d   and total charged = %d\n",nor,RA);
+    printf("number of BIKE entered = %d   and total charged = %d\n",nobi,BIA);
+    printf("Total Number of Vehicles Entered= %d\n",count);
+    printf("Total AMOUNT = %d\n",amount);
+}
+void reset()
+{
+    nob=0;
+    noc=0;
+    nobi=0;
+    nor=0;
+    amount=0;
+    count=0;
+    BA=CA=RA=BIA=0;
+    printf("\nRESET DONE\a");
+}
+
+int main()
+{
+   int ch;
+   while(1)
+   {
+    //clrscr
+    printf("\n\nPROJECT  PARKING\n");
+    printf("\n1. Bus \n2. Cycle \n3. RIKSHAW \n4. Bike \n5. Current Status\n6. Reset\n7. EXIT\n");
+    printf("\nEnter Vehicle or Choice: ");
+    scanf("%d",&ch);
+    switch(ch)
+     {
+      case 1:
+           {
+               bus();
+               break;
+           }       
+      case 2:
+           {
+               cycle();
+               break;
+           }      
+      case 3:
+          {    
+           Rikshaw();
+           break;
+          } 
+      case 4:
+          {    
+           bike();
+           break;
+          } 
+           
+      case 5:
+          {
+           status();
+           break;
+          } 
+           
+      case 6:
+          {
+           reset();
+           break;
+          } 
+      case 7:
+          {
+           exit(0);
+          }
+      default :
+          {
+              printf("INVALID CHOICE");
+          }
+     }
+    getchar();
+   } 
+   return(1);
+}
